@@ -19,8 +19,8 @@ public class StudentRessource extends CommonResource {
     StudentService studentService;
 
     @GetMapping()
-    public List<Student> getAllStudent(@RequestParam(name = "marks", required = false) Integer marks) {
-        return this.studentService.getAllStudent(marks != null ? marks : 0);
+    public List<Student> getAllStudent(@RequestParam(name = "marks", required = false, defaultValue = "0") Integer age) {
+        return this.studentService.getAllStudent(age);
     }
 
     @GetMapping("{id}")
